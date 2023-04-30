@@ -101,7 +101,7 @@ layer of the pre-trained XLS-R outperforms DNSMOS and the MFCC baseline.
           </tr>
           <tr>
               <td align=center>MFCC Transformer</td>
-              <td align=center>3.276</td>
+              <td align=center>3.275</td>
           </tr>
           <tr>
               <td align=center>XLS-R 1B Layer41 <br /> Transformer</td>
@@ -140,7 +140,7 @@ layer of the pre-trained XLS-R outperforms DNSMOS and the MFCC baseline.
           </tr>
           <tr>
               <td align=center>XLS-R 1B Layer41 <br /> Transformer</td>
-              <td align=center>3.404</td>
+              <td align=center>3.405</td>
           </tr>
       </tbody>
   </table>
@@ -167,15 +167,15 @@ layer of the pre-trained XLS-R outperforms DNSMOS and the MFCC baseline.
           <tr>
               <td rowspan=3><video src="https://user-images.githubusercontent.com/32679237/235354283-7d765c2f-0e78-48aa-8ac2-26640b09eaf4.mp4"> |</td>
               <td align=center>DNSMOS</td>
-              <td align=center>2.553</td>
+              <td align=center>2.704</td>
           </tr>
           <tr>
               <td align=center>MFCC Transformer</td>
-              <td align=center>1.794</td>
+              <td align=center>1.535</td>
           </tr>
           <tr>
               <td align=center>XLS-R 1B Layer41 <br /> Transformer</td>
-              <td align=center>2.031</td>
+              <td align=center>1.978</td>
           </tr>
       </tbody>
   </table>
@@ -208,7 +208,7 @@ layer of the pre-trained XLS-R outperforms DNSMOS and the MFCC baseline.
           </tr>
           <tr>
               <td align=center>XLS-R 1B Layer41 <br /> Transformer</td>
-              <td align=center>2.031</td>
+              <td align=center>2.029</td>
           </tr>
       </tbody>
   </table>
