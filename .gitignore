@@ -1,0 +1,8 @@
+*.egg-info
+# Audio samples converted to video to be displayed on GitHub.
+vid/ 
+
+# For now, don't push models or venv.
+models/
+venv/
+test.py
