@@ -31,12 +31,12 @@ Representations as Feature Extractors for Speech Quality Assessment in Online
 Conferencing Applications. Proc. Interspeech 2022, 4083-4087, doi:
 10.21437/Interspeech.2022-10147
 
-[2] C. K. A. Reddy, V. Gopal and R. Cutler, "Dnsmos: A Non-Intrusive Perceptual
+[2] C. K. A. Reddy, V. Gopal and R. Cutler, "DNSMOS: A Non-Intrusive Perceptual
 Objective Speech Quality Metric to Evaluate Noise Suppressors," ICASSP 2021 - 2021
 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP),
 Toronto, ON, Canada, 2021, pp. 6493-6497, doi: 10.1109/ICASSP39728.2021.9414878.
 
-**Visualization of MOS predictions:**
+### 1.2. Visualization of MOS Predictions
 
 MOS predictions on two unseen datasets: NISQA (left) and IU
 Bloomington (right). Our proposed model based on embeddings extracted from the 41st
@@ -44,7 +44,7 @@ layer of the pre-trained XLS-R outperforms DNSMOS and the MFCC baseline.
 
 ![Visualization of MOS Predictions](img/mos-prediction-visualization.svg)
 
-### 1.2. Example Audio Segments
+### 1.3. Example Audio Segments
 
 <details>
   <summary>🔊
