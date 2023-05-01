@@ -2,7 +2,7 @@ import torch
 from torch import nn, Tensor
 from typing import Tuple
 
-from xls_r_sqa.config import Config, Transformer
+from xls_r_sqa.config import Config
 from xls_r_sqa.pool_att_ff import PoolAttFF
 from xls_r_sqa.transformer_wrapper import TransformerWrapper
 
@@ -30,12 +30,20 @@ class SingleLayerModel(nn.Module):
             - output: (N,1) or (1,)
         """
 
+        unsqueezed = False
+        if features.dim() == 2:
+            features = features.unsqueeze(0) # Include batch dim
+            unsqueezed = True
+
         # Transform from (N, L, C) to (N, C, L) and back.
         x = self.norm_input(features.transpose(-1,-2)).transpose(-1,-2)
         x = self.transformer(x)
         x = self.norm_trans(x.transpose(-1,-2)).transpose(-1,-2)
-        x = self.pool(x)
+        x = self.pool(x).squeeze(-1)
         x = self.sigmoid(x)
+
+        if unsqueezed:
+            x = x.squeeze(0)
 
         return x
 
@@ -69,6 +77,11 @@ class FusionModel(nn.Module):
             - output: (N,1) or (1,)
         """
 
+        unsqueezed = False
+        if features[0].dim() == 2:
+            features = tuple(x.unsqueeze(0) for x in features) # Include batch dim
+            unsqueezed = True
+
         # Batch norm for each XLS-R layer.
         # Transform from (N, L, C) to (N, C, L) and back.
         features = tuple(
@@ -81,7 +94,10 @@ class FusionModel(nn.Module):
 
         x = self.transformer(x)
         x = self.norm_trans(x.transpose(-1,-2)).transpose(-1,-2)
-        x = self.pool(x)
+        x = self.pool(x).squeeze(-1)
         x = self.sigmoid(x)
+
+        if unsqueezed:
+            x = x.squeeze(0)
 
         return x

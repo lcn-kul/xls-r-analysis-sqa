@@ -1,4 +1,9 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
 *.egg-info
+
 # Audio samples converted to video to be displayed on GitHub.
 vid/ 
 

@@ -49,13 +49,13 @@ class Config:
             # From XLS-R paper Table 2: Model architectures.
             if xlsr_name == "wav2vec2-xls-r-300m":
                 _b = 24
-                _h = 1920
+                _h = 1024
             elif xlsr_name == "wav2vec2-xls-r-1b":
                 _b = 48
                 _h = 1280
             elif xlsr_name == "wav2vec2-xls-r-2b":
                 _b = 48
-                _h = 1024
+                _h = 1920
             self.xlsr_layers = _b + 1  # +1 for CNN activation "layer0"
             self.dim_input = _h
         else:
