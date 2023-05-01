@@ -8,6 +8,4 @@ __pycache__/
 vid/ 
 
 # For now, don't push models or venv.
-models/
 venv/
-test.py

@@ -1,0 +1,1 @@
+Truncated versions of XLS-R.
