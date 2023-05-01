@@ -253,9 +253,9 @@ pip3 install -r requirements.txt
 
 Finally, this code uses truncated XLS-R models. These can be obtained by downloading
 them from our HuggingFace repositories
-[[instructions]](/models/xls-r-trunc/README.md) or by downloading the full
-pre-trained models [[instructions]](/models/xls-r/README.md) and running the script
-`truncate_w2v2.py`.
+[[link]](/models/xls-r-trunc/README.md) or by downloading the full
+pre-trained models [[link]](/models/xls-r/README.md) and running the script
+[`truncate_w2v2.py`](/truncate_w2v2.py).
 
 **Warning:** the size of the truncated XLS-R models sums to 15GB (times 2 since the
 .git directory is also a similar size).

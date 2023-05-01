@@ -1,8 +1,11 @@
-**FYI**
+# xls-r
 
-You can download the full pre-trained XLS-R models from HuggingFace using the
-following commands. However, the truncated XLS-R models are all you need for this
-repository.
+Truncated XLS-R models are used in this repository. These can be downloaded directly
+[[link]](/models/xls-r-trunc/README.md), or by downloading the full pre-trained XLS-R
+models and running the script [`truncate_w2v2.py`](/truncate_w2v2.py).
+
+
+ **Download Pre-Trained XLS-R Models**
 
 ```
 git lfs install
