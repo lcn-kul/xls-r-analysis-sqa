@@ -31,12 +31,12 @@ Representations as Feature Extractors for Speech Quality Assessment in Online
 Conferencing Applications. Proc. Interspeech 2022, 4083-4087, doi:
 10.21437/Interspeech.2022-10147
 
-[2] C. K. A. Reddy, V. Gopal and R. Cutler, "Dnsmos: A Non-Intrusive Perceptual
+[2] C. K. A. Reddy, V. Gopal and R. Cutler, "DNSMOS: A Non-Intrusive Perceptual
 Objective Speech Quality Metric to Evaluate Noise Suppressors," ICASSP 2021 - 2021
 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP),
 Toronto, ON, Canada, 2021, pp. 6493-6497, doi: 10.1109/ICASSP39728.2021.9414878.
 
-**Visualization of MOS predictions:**
+### 1.2. Visualization of MOS Predictions
 
 MOS predictions on two unseen datasets: NISQA (left) and IU
 Bloomington (right). Our proposed model based on embeddings extracted from the 41st
@@ -44,7 +44,7 @@ layer of the pre-trained XLS-R outperforms DNSMOS and the MFCC baseline.
 
 ![Visualization of MOS Predictions](img/mos-prediction-visualization.svg)
 
-### 1.2. Example Audio Segments
+### 1.3. Example Audio Segments
 
 <details>
   <summary>🔊
@@ -58,6 +58,7 @@ layer of the pre-trained XLS-R outperforms DNSMOS and the MFCC baseline.
               <th>Audio Sample</th>
               <th>Model</th>
               <th>Prediction</th>
+              <th>Error</th>
           </tr>
       </thead>
       <tbody>
@@ -65,14 +66,17 @@ layer of the pre-trained XLS-R outperforms DNSMOS and the MFCC baseline.
               <td rowspan=3><video src="https://user-images.githubusercontent.com/32679237/235354126-444c44ce-3e39-46da-8b4e-647e64ee243a.mp4"> |</td>
               <td align=center>DNSMOS</td>
               <td align=center>3.699</td>
+              <td align=center>-1.109</td>
           </tr>
           <tr>
               <td align=center>MFCC Transformer</td>
               <td align=center>3.231</td>
+              <td align=center>-1.577</td>
           </tr>
           <tr>
               <td align=center>XLS-R 1B Layer41 <br /> Transformer</td>
               <td align=center>4.126</td>
+              <td align=center>-0.682</td>
           </tr>
       </tbody>
   </table>
@@ -91,6 +95,7 @@ layer of the pre-trained XLS-R outperforms DNSMOS and the MFCC baseline.
               <th>Audio Sample</th>
               <th>Model</th>
               <th>Prediction</th>
+              <th>Error</th>
           </tr>
       </thead>
       <tbody>
@@ -98,14 +103,17 @@ layer of the pre-trained XLS-R outperforms DNSMOS and the MFCC baseline.
               <td rowspan=3><video src="https://user-images.githubusercontent.com/32679237/235354278-277152e2-da3e-48aa-b21c-1ddee3e9f0cc.mp4"> |</td>
               <td align=center>DNSMOS</td>
               <td align=center>3.269</td>
+              <td align=center>-0.835</td>
           </tr>
           <tr>
               <td align=center>MFCC Transformer</td>
-              <td align=center>3.276</td>
+              <td align=center>3.275</td>
+              <td align=center>-0.829</td>
           </tr>
           <tr>
               <td align=center>XLS-R 1B Layer41 <br /> Transformer</td>
               <td align=center>3.260</td>
+              <td align=center>-0.844</td>
           </tr>
       </tbody>
   </table>
@@ -126,6 +134,7 @@ layer of the pre-trained XLS-R outperforms DNSMOS and the MFCC baseline.
               <th>Audio Sample</th>
               <th>Model</th>
               <th>Prediction</th>
+              <th>Error</th>
           </tr>
       </thead>
       <tbody>
@@ -133,14 +142,17 @@ layer of the pre-trained XLS-R outperforms DNSMOS and the MFCC baseline.
               <td rowspan=3><video src="https://user-images.githubusercontent.com/32679237/235358366-df15fb96-7926-4a8e-8d06-cc1833aec3e3.mp4"> |</td>
               <td align=center>DNSMOS</td>
               <td align=center>3.309</td>
+              <td align=center>+0.141</td>
           </tr>
           <tr>
               <td align=center>MFCC Transformer</td>
               <td align=center>3.515</td>
+              <td align=center>+0.347</td>
           </tr>
           <tr>
               <td align=center>XLS-R 1B Layer41 <br /> Transformer</td>
-              <td align=center>3.404</td>
+              <td align=center>3.405</td>
+              <td align=center>+0.237</td>
           </tr>
       </tbody>
   </table>
@@ -161,21 +173,25 @@ layer of the pre-trained XLS-R outperforms DNSMOS and the MFCC baseline.
               <th>Audio Sample</th>
               <th>Model</th>
               <th>Prediction</th>
+              <th>Error</th>
           </tr>
       </thead>
       <tbody>
           <tr>
               <td rowspan=3><video src="https://user-images.githubusercontent.com/32679237/235354283-7d765c2f-0e78-48aa-8ac2-26640b09eaf4.mp4"> |</td>
               <td align=center>DNSMOS</td>
-              <td align=center>2.553</td>
+              <td align=center>2.704</td>
+              <td align=center>+0.464</td>
           </tr>
           <tr>
               <td align=center>MFCC Transformer</td>
-              <td align=center>1.794</td>
+              <td align=center>1.535</td>
+              <td align=center>-0.705</td>
           </tr>
           <tr>
               <td align=center>XLS-R 1B Layer41 <br /> Transformer</td>
-              <td align=center>2.031</td>
+              <td align=center>1.978</td>
+              <td align=center>-0.262</td>
           </tr>
       </tbody>
   </table>
@@ -194,6 +210,7 @@ layer of the pre-trained XLS-R outperforms DNSMOS and the MFCC baseline.
               <th>Audio Sample</th>
               <th>Model</th>
               <th>Prediction</th>
+              <th>Error</th>
           </tr>
       </thead>
       <tbody>
@@ -201,14 +218,17 @@ layer of the pre-trained XLS-R outperforms DNSMOS and the MFCC baseline.
               <td rowspan=3><video src="https://user-images.githubusercontent.com/32679237/235355743-2ebdb1bf-e9aa-4538-a3fe-acd9633e6443.mp4"> |</td>
               <td align=center>DNSMOS</td>
               <td align=center>2.553</td>
+              <td align=center>+1.137</td>
           </tr>
           <tr>
               <td align=center>MFCC Transformer</td>
               <td align=center>1.794</td>
+              <td align=center>+0.378</td>
           </tr>
           <tr>
               <td align=center>XLS-R 1B Layer41 <br /> Transformer</td>
-              <td align=center>2.031</td>
+              <td align=center>2.029</td>
+              <td align=center>+0.613</td>
           </tr>
       </tbody>
   </table>
