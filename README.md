@@ -39,9 +39,9 @@ Toronto, ON, Canada, 2021, pp. 6493-6497, doi: 10.1109/ICASSP39728.2021.9414878.
 ### 1.2. Visualization of MOS Predictions
 
 MOS predictions on two unseen datasets: NISQA (top) and IU Bloomington (bottom).
-Our proposed model based on embeddings extracted from the 41st layer of the pre-
-trained XLS-R outperforms DNSMOS and the MFCC baseline. The human ACRs are also
-visualized for the IUB corpus.
+Our proposed model based on embeddings extracted from the 41st layer of the
+pre-trained XLS-R outperforms DNSMOS and the MFCC baseline. The human ACRs are
+also visualized for the IUB corpus.
 
 <p align="left">
   <img width="630" src="img/mos-prediction-visualization-with-human-nisqa-bw_0.5.svg">
