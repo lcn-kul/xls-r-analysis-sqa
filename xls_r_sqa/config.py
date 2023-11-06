@@ -39,7 +39,7 @@ class Config:
         # Save parameters.
         self.name = name
         self.input = input
-        self.feat_seq_len = FEAT_SEQ_LEN
+        self.feat_seq_len = feat_seq_len
         self.dim_transformer = dim_transformer
         self.xlsr_name = xlsr_name
         self.nhead_transformer = nhead_transformer
