@@ -63,13 +63,18 @@ Toronto, ON, Canada, 2021, pp. 6493-6497, doi: 10.1109/ICASSP39728.2021.9414878.
 
 ### 1.2. Visualization of MOS Predictions
 
-MOS predictions on two unseen datasets: NISQA (top) and IU
-Bloomington (bottom). Our proposed model based on embeddings extracted from the 10th
-layer of the pre-trained XLS-R outperforms DNSMOS and the MFCC baseline.
+MOS predictions on two unseen datasets: NISQA (top) and IU Bloomington (bottom).
+Our proposed model based on embeddings extracted from the 10th layer of the
+pre-trained XLS-R 2B outperforms DNSMOS and the MFCC baseline. The human ACRs are
+also visualized for the IUB corpus.
 
-![Visualization of MOS Predictions (NISQA)](img-v2/mos-prediction-visualization-nisqa.svg)
+<p align="left">
+  <img width="630" src="img-v2/mos-prediction-visualization-nisqa.svg">
+</p>
 
-![Visualization of MOS Predictions (IUB)](img-v2/mos-prediction-visualization-iub.svg)
+<p align="left">
+  <img width="800" src="img-v2/mos-prediction-visualization-iub.svg">
+</p>
 
 ### 1.3. Example Audio Segments
 
@@ -279,10 +284,10 @@ pip3 install -r requirements.txt
 ```
 
 Finally, this code uses truncated XLS-R models. These can be obtained by downloading
-them from our HuggingFace repositories
-[[link]](/models/xls-r-trunc/README.md) or by downloading the full
-pre-trained models [[link]](/models/xls-r/README.md) and running the script
-[`truncate_w2v2.py`](/truncate_w2v2.py).
+them from our HuggingFace repositories (recommended, follow
+[[these instructions]](/models/xls-r-trunc/README.md)) or by downloading the full
+pre-trained models (follow [[these instructions]](/models/xls-r/README.md)) and running
+the script [`truncate_w2v2.py`](/truncate_w2v2.py).
 
 **Warning:** the size of the truncated XLS-R models sums to 15GB (times 2 since the
 .git directory is also a similar size).
