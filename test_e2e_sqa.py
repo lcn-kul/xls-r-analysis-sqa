@@ -44,7 +44,7 @@ def test_e2e():
     # - XLSR_300M_TRANSFORMER_32DEEP_CONFIG
     # - XLSR_1B_TRANSFORMER_32DEEP_CONFIG
     # - XLSR_2B_TRANSFORMER_32DEEP_CONFIG
-    config = XLSR_1B_TRANSFORMER_32DEEP_CONFIG
+    config = XLSR_2B_TRANSFORMER_32DEEP_CONFIG
     use_xlsr = "XLSR" in config.name
 
     # ======== **SELECT LAYERS** ======== #
@@ -52,7 +52,7 @@ def test_e2e():
     # - XLSR_1B  : 10, 41, or [10,41]
     # - XLSR_2B  : 10, 41, or [10,41]
     if use_xlsr:
-        xlsr_layers = 41
+        xlsr_layers = 10
     else:
         xlsr_layers = None
 
@@ -73,10 +73,10 @@ def test_e2e():
         is_fusion = len(xlsr_layers) == 2
         fusion_name = "fusion" if is_fusion else f"lay{xlsr_layers[0]}"
         trunc_xlsr_dir = os.path.join(model_dir, "xls-r-trunc", f"wav2vec2-xls-r-{xlsr_size}-lay{max(xlsr_layers)}")
-        sqa_path = os.path.join(model_dir, "sqa", f"xls-r-{xlsr_size}", f"model_{xlsr_size}_{fusion_name}_{ds}.pt")
+        sqa_path = os.path.join(model_dir, "sqa-v2", f"xls-r-{xlsr_size}", f"model_{xlsr_size}_{fusion_name}_{ds}.pt")
     else:
         trunc_xlsr_dir = None
-        sqa_path = os.path.join(model_dir, "sqa", "mfcc", f"model_mfcc_{ds}.pt")
+        sqa_path = os.path.join(model_dir, "sqa-v2", "mfcc", f"model_mfcc_{ds}.pt")
 
     # Create end-to-end model.
     print("Loading model...")

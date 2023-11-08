@@ -10,20 +10,45 @@ Assessment".
 Comparison of model performance on each unseen corpus individually (NISQA, IUB) and
 combined together (Unseen). The metric is RMSE, lower is better.
 
+<details>
+  <summary>**V1 Results** (MOS = 4.808)</summary>
+  
+  | Model                                  |   NISQA    |    IUB     |   Unseen   |
+  |----------------------------------------|:----------:|:----------:|:----------:|
+  | ***XLS-R 300M Layer24 Bi-LSTM [1]***   |  *0.5907*  |  *0.5067*  |  *0.5323*  |
+  | ***DNSMOS [2]***                       |  *0.8718*  |  *0.5452*  |  *0.6565*  |
+  | MFCC Transformer                       |   0.8280   |   0.7775   |   0.7924   |
+  | XLS-R 300M Layer5 Transformer          |   0.6256   |   0.5049   |   0.5425   |
+  | XLS-R 300M Layer21 Transformer         |   0.5694   |   0.5025   |   0.5227   |
+  | XLS-R 300M Layer5+21 Transformer       |   0.5683   |   0.4886   |   0.5129   |
+  | XLS-R 1B Layer10 Transformer           | **0.5456** |   0.5815   |   0.5713   |
+  | **XLS-R 1B Layer41 Transformer**       |   0.5657   | **0.4656** | **0.4966** |
+  | XLS-R 1B Layer10+41 Transformer        |   0.5748   |   0.5288   |   0.5425   |
+  | XLS-R 2B Layer10 Transformer           |   0.6277   |   0.4899   |   0.5334   |
+  | XLS-R 2B Layer41 Transformer           |   0.5724   |   0.4897   |   0.5150   |
+  | XLS-R 2B Layer10+41 Transformer        |   0.6036   |   0.4743   |   0.5150   |
+  | ***Human***                            |  *0.6738*  |  *0.6573*  |  *0.6629*  |
+  
+</details>
+
+**UPDATE: the code has been updated to use version 2 of the models. Version 1 used
+the final model checkpoint by mistake, version 2 uses the checkpoint with the minimum
+validation loss.**
+
 | Model                                  |   NISQA    |    IUB     |   Unseen   |
 |----------------------------------------|:----------:|:----------:|:----------:|
 | ***XLS-R 300M Layer24 Bi-LSTM [1]***   |  *0.5907*  |  *0.5067*  |  *0.5323*  |
 | ***DNSMOS [2]***                       |  *0.8718*  |  *0.5452*  |  *0.6565*  |
 | MFCC Transformer                       |   0.8280   |   0.7775   |   0.7924   |
-| XLS-R 300M Layer5 Transformer          |   0.6256   |   0.5049   |   0.5425   |
-| XLS-R 300M Layer21 Transformer         |   0.5694   |   0.5025   |   0.5227   |
-| XLS-R 300M Layer5+21 Transformer       |   0.5683   |   0.4886   |   0.5129   |
-| XLS-R 1B Layer10 Transformer           | **0.5456** |   0.5815   |   0.5713   |
-| **XLS-R 1B Layer41 Transformer**       |   0.5657   | **0.4656** | **0.4966** |
-| XLS-R 1B Layer10+41 Transformer        |   0.5748   |   0.5288   |   0.5425   |
-| XLS-R 2B Layer10 Transformer           |   0.6277   |   0.4899   |   0.5334   |
-| XLS-R 2B Layer41 Transformer           |   0.5724   |   0.4897   |   0.5150   |
-| XLS-R 2B Layer10+41 Transformer        |   0.6036   |   0.4743   |   0.5150   |
+| XLS-R 300M Layer5 Transformer          |   0.6494   |   0.5117   |   0.5550   |
+| XLS-R 300M Layer21 Transformer         |   0.5852   |   0.4838   |   0.5152   |
+| XLS-R 300M Layer5+21 Transformer       |   0.5861   |   0.4768   |   0.5108   |
+| XLS-R 1B Layer10 Transformer           |   0.6217   |   0.4763   |   0.5225   |
+| XLS-R 1B Layer41 Transformer           |   0.5615   |   0.4646   |   0.4946   |
+| XLS-R 1B Layer10+41 Transformer        |   0.6024   |   0.4624   |   0.5068   |
+| **XLS-R 2B Layer10 Transformer**       |   0.5227   | **0.4447** | **0.4686** |
+| XLS-R 2B Layer41 Transformer           |   0.5295   |   0.4926   |   0.5035   |
+| XLS-R 2B Layer10+41 Transformer        | **0.5191** |   0.4573   |   0.4760   |
 | ***Human***                            |  *0.6738*  |  *0.6573*  |  *0.6629*  |
 
 [1] Tamm, B., Balabin, H., Vandenberghe, R., Van hamme, H. (2022) Pre-trained Speech
@@ -38,11 +63,13 @@ Toronto, ON, Canada, 2021, pp. 6493-6497, doi: 10.1109/ICASSP39728.2021.9414878.
 
 ### 1.2. Visualization of MOS Predictions
 
-MOS predictions on two unseen datasets: NISQA (left) and IU
-Bloomington (right). Our proposed model based on embeddings extracted from the 41st
+MOS predictions on two unseen datasets: NISQA (top) and IU
+Bloomington (bottom). Our proposed model based on embeddings extracted from the 10th
 layer of the pre-trained XLS-R outperforms DNSMOS and the MFCC baseline.
 
-![Visualization of MOS Predictions](img/mos-prediction-visualization.svg)
+![Visualization of MOS Predictions (NISQA)](img-v2/mos-prediction-visualization-nisqa.svg)
+
+![Visualization of MOS Predictions (IUB)](img-v2/mos-prediction-visualization-iub.svg)
 
 ### 1.3. Example Audio Segments
 
@@ -74,9 +101,9 @@ layer of the pre-trained XLS-R outperforms DNSMOS and the MFCC baseline.
               <td align=center>-1.577</td>
           </tr>
           <tr>
-              <td align=center>XLS-R 1B Layer41 <br /> Transformer</td>
-              <td align=center>4.126</td>
-              <td align=center>-0.682</td>
+              <td align=center>XLS-R 2B Layer10 <br /> Transformer</td>
+              <td align=center>3.935</td>
+              <td align=center>-0.873</td>
           </tr>
       </tbody>
   </table>
@@ -111,9 +138,9 @@ layer of the pre-trained XLS-R outperforms DNSMOS and the MFCC baseline.
               <td align=center>-0.829</td>
           </tr>
           <tr>
-              <td align=center>XLS-R 1B Layer41 <br /> Transformer</td>
-              <td align=center>3.260</td>
-              <td align=center>-0.844</td>
+              <td align=center>XLS-R 2B Layer10 <br /> Transformer</td>
+              <td align=center>3.793</td>
+              <td align=center>-0.311</td>
           </tr>
       </tbody>
   </table>
@@ -150,9 +177,9 @@ layer of the pre-trained XLS-R outperforms DNSMOS and the MFCC baseline.
               <td align=center>+0.347</td>
           </tr>
           <tr>
-              <td align=center>XLS-R 1B Layer41 <br /> Transformer</td>
-              <td align=center>3.405</td>
-              <td align=center>+0.237</td>
+              <td align=center>XLS-R 2B Layer10 <br /> Transformer</td>
+              <td align=center>3.080</td>
+              <td align=center>-0.088</td>
           </tr>
       </tbody>
   </table>
@@ -189,9 +216,9 @@ layer of the pre-trained XLS-R outperforms DNSMOS and the MFCC baseline.
               <td align=center>-0.705</td>
           </tr>
           <tr>
-              <td align=center>XLS-R 1B Layer41 <br /> Transformer</td>
-              <td align=center>1.978</td>
-              <td align=center>-0.262</td>
+              <td align=center>XLS-R 2B Layer10 <br /> Transformer</td>
+              <td align=center>2.284</td>
+              <td align=center>+0.044</td>
           </tr>
       </tbody>
   </table>
@@ -226,9 +253,9 @@ layer of the pre-trained XLS-R outperforms DNSMOS and the MFCC baseline.
               <td align=center>+0.378</td>
           </tr>
           <tr>
-              <td align=center>XLS-R 1B Layer41 <br /> Transformer</td>
-              <td align=center>2.029</td>
-              <td align=center>+0.613</td>
+              <td align=center>XLS-R 2B Layer10 <br /> Transformer</td>
+              <td align=center>2.312</td>
+              <td align=center>+0.896</td>
           </tr>
       </tbody>
   </table>
