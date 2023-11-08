@@ -300,14 +300,15 @@ A working example is provided in [test_e2e_sqa.py](/test_e2e_sqa.py).
 
 ## 4. Citation
 
-TODO
-
 ```bibtex
-@inproceedings{X,
-  title={X},
-  author={X},
-  booktitle = {X},
-  pages = {X},
-  year={2023}
+@INPROCEEDINGS{10248049,
+  author={Tamm, Bastiaan and Vandenberghe, Rik and Van Hamme, Hugo},
+  booktitle={2023 IEEE Workshop on Applications of Signal Processing to Audio and Acoustics (WASPAA)}, 
+  title={Analysis of XLS-R for Speech Quality Assessment}, 
+  year={2023},
+  volume={},
+  number={},
+  pages={1-5},
+  doi={10.1109/WASPAA58266.2023.10248049}
 }
 ```
