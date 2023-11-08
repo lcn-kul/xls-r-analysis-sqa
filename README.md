@@ -11,7 +11,7 @@ Comparison of model performance on each unseen corpus individually (NISQA, IUB) 
 combined together (Unseen). The metric is RMSE, lower is better.
 
 <details>
-  <summary>**V1 Results** (MOS = 4.808)</summary>
+  <summary><b>V1 Results</b></summary>
   
   | Model                                  |   NISQA    |    IUB     |   Unseen   |
   |----------------------------------------|:----------:|:----------:|:----------:|
@@ -31,9 +31,11 @@ combined together (Unseen). The metric is RMSE, lower is better.
   
 </details>
 
-**UPDATE: the code has been updated to use version 2 of the models. Version 1 used
+**V2 Results**
+
+**UPDATE:** the code has been updated to use version 2 of the models. Version 1 used
 the final model checkpoint by mistake, version 2 uses the checkpoint with the minimum
-validation loss.**
+validation loss.
 
 | Model                                  |   NISQA    |    IUB     |   Unseen   |
 |----------------------------------------|:----------:|:----------:|:----------:|
