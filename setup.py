@@ -7,4 +7,5 @@ setup(
     description="Models for the paper 'Analysis of XLS-R for Speech Quality Assessment'.",
     author="Bastiaan Tamm",
     license="MIT",
+    include_dirs=["xls_r_sqa"],
 )
