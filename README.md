@@ -39,7 +39,7 @@ validation loss.**
 |----------------------------------------|:----------:|:----------:|:----------:|
 | ***XLS-R 300M Layer24 Bi-LSTM [1]***   |  *0.5907*  |  *0.5067*  |  *0.5323*  |
 | ***DNSMOS [2]***                       |  *0.8718*  |  *0.5452*  |  *0.6565*  |
-| MFCC Transformer                       |   0.8280   |   0.7775   |   0.7924   |
+| MFCC Transformer                       |   0.9291   |   0.7415   |   0.8003   |
 | XLS-R 300M Layer5 Transformer          |   0.6494   |   0.5117   |   0.5550   |
 | XLS-R 300M Layer21 Transformer         |   0.5852   |   0.4838   |   0.5152   |
 | XLS-R 300M Layer5+21 Transformer       |   0.5861   |   0.4768   |   0.5108   |
@@ -102,8 +102,8 @@ also visualized for the IUB corpus.
           </tr>
           <tr>
               <td align=center>MFCC Transformer</td>
-              <td align=center>3.231</td>
-              <td align=center>-1.577</td>
+              <td align=center>3.497</td>
+              <td align=center>−1.311</td>
           </tr>
           <tr>
               <td align=center>XLS-R 2B Layer10 <br /> Transformer</td>
@@ -139,8 +139,8 @@ also visualized for the IUB corpus.
           </tr>
           <tr>
               <td align=center>MFCC Transformer</td>
-              <td align=center>3.275</td>
-              <td align=center>-0.829</td>
+              <td align=center>2.498</td>
+              <td align=center>-1.606</td>
           </tr>
           <tr>
               <td align=center>XLS-R 2B Layer10 <br /> Transformer</td>
@@ -178,8 +178,8 @@ also visualized for the IUB corpus.
           </tr>
           <tr>
               <td align=center>MFCC Transformer</td>
-              <td align=center>3.515</td>
-              <td align=center>+0.347</td>
+              <td align=center>3.931</td>
+              <td align=center>+0.763</td>
           </tr>
           <tr>
               <td align=center>XLS-R 2B Layer10 <br /> Transformer</td>
@@ -217,8 +217,8 @@ also visualized for the IUB corpus.
           </tr>
           <tr>
               <td align=center>MFCC Transformer</td>
-              <td align=center>1.535</td>
-              <td align=center>-0.705</td>
+              <td align=center>1.927</td>
+              <td align=center>-0.313</td>
           </tr>
           <tr>
               <td align=center>XLS-R 2B Layer10 <br /> Transformer</td>
@@ -254,8 +254,8 @@ also visualized for the IUB corpus.
           </tr>
           <tr>
               <td align=center>MFCC Transformer</td>
-              <td align=center>1.794</td>
-              <td align=center>+0.378</td>
+              <td align=center>1.806</td>
+              <td align=center>+0.390</td>
           </tr>
           <tr>
               <td align=center>XLS-R 2B Layer10 <br /> Transformer</td>
