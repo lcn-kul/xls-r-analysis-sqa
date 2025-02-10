@@ -11,6 +11,7 @@ from xls_r_sqa.config import (
     XLSR_2B_TRANSFORMER_32DEEP_CONFIG,
 )
 from xls_r_sqa.e2e_model import E2EModel
+from xls_r_sqa.utils import get_model_path
 
 def _decode_non_mp3_file_like(file, new_sr):
     # Source:
@@ -54,7 +55,7 @@ def test_e2e():
     if use_xlsr:
         xlsr_layers = 10
     else:
-        xlsr_layers = None
+        xlsr_layers = None  # For MFCC-based models
 
     # ======== **SELECT DATASET** ======= #
     # - "full" or "subset"
@@ -62,31 +63,16 @@ def test_e2e():
 
     # ============ EXECUTION ============ #
 
-    # Define paths.
-    script_dir = os.path.dirname(__file__)
-    model_dir = os.path.join(script_dir, "xls_r_sqa", "models")
-    if use_xlsr:
-        xlsr_size = config.name.lower()[5:-26] # 300m, 1b, 2b
-        if isinstance(xlsr_layers, int):
-            xlsr_layers = [xlsr_layers]
-        assert len(xlsr_layers) in [1,2]
-        is_fusion = len(xlsr_layers) == 2
-        fusion_name = "fusion" if is_fusion else f"lay{xlsr_layers[0]}"
-        trunc_xlsr_dir = os.path.join(model_dir, "xls-r-trunc", f"wav2vec2-xls-r-{xlsr_size}-lay{max(xlsr_layers)}")
-        sqa_path = os.path.join(model_dir, "sqa-v2", f"xls-r-{xlsr_size}", f"model_{xlsr_size}_{fusion_name}_{ds}.pt")
-    else:
-        trunc_xlsr_dir = None
-        sqa_path = os.path.join(model_dir, "sqa-v2", "mfcc", f"model_mfcc_{ds}.pt")
-
     # Create end-to-end model.
     print("Loading model...")
     device = "cpu"
-    e2e_model = E2EModel(config, xlsr_layers, trunc_xlsr_dir, sqa_path)
+    e2e_model = E2EModel(config, xlsr_layers, dataset_variant=ds, auto_download=True)
     e2e_model = e2e_model.to(device)
+    e2e_model.eval()
 
     # Run inference on files.
     print("Running inference on files...")
-    e2e_model.eval()
+    script_dir = os.path.dirname(__file__)
     audio_dir = os.path.join(script_dir, "audio_samples")
     file_names = [f"iub-{x}.wav" for x in ["bad", "poor", "fair", "good", "excellent"]]
     for file_name in file_names:

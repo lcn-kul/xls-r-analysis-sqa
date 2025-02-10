@@ -2,6 +2,8 @@
 __pycache__/
 *.py[cod]
 
+# Distribution / packaging
+/dist/
 *.egg-info
 
 # Audio samples converted to video to be displayed on GitHub.
