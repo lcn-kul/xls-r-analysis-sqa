@@ -64,7 +64,7 @@ def test_e2e():
 
     # Define paths.
     script_dir = os.path.dirname(__file__)
-    model_dir = os.path.join(script_dir, "models")
+    model_dir = os.path.join(script_dir, "xls_r_sqa", "models")
     if use_xlsr:
         xlsr_size = config.name.lower()[5:-26] # 300m, 1b, 2b
         if isinstance(xlsr_layers, int):

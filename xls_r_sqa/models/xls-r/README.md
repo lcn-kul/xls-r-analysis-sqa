@@ -1,7 +1,7 @@
 # xls-r
 
 Truncated XLS-R models are used in this repository. These can be downloaded directly
-[[link]](/models/xls-r-trunc/README.md), or by downloading the full pre-trained XLS-R
+[[link]](/xls_r_sqa/models/xls-r-trunc/README.md), or by downloading the full pre-trained XLS-R
 models and running the script [`truncate_w2v2.py`](/truncate_w2v2.py).
 
 

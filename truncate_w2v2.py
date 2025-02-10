@@ -51,8 +51,8 @@ def truncate_w2v2(pretrained_bin: str, layers_to_keep: int, num_layers):
 
 if __name__ == "__main__":
     script_dir = os.path.dirname(__file__)
-    pretrained_basedir = os.path.join(script_dir, "models", "xls-r")
-    truncated_basedir = os.path.join(script_dir, "models", "xls-r-trunc")
+    pretrained_basedir = os.path.join(script_dir, "xls_r_sqa", "models", "xls-r")
+    truncated_basedir = os.path.join(script_dir, "xls_r_sqa", "models", "xls-r-trunc")
     xlsr_names = ["wav2vec2-xls-r-300m", "wav2vec2-xls-r-1b", "wav2vec2-xls-r-2b"]
     xlsr_bins = {x: os.path.join(pretrained_basedir, x, "pytorch_model.bin") for x in xlsr_names}
     to_truncate = [
