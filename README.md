@@ -272,6 +272,14 @@ also visualized for the IUB corpus.
 
 ## 2. Installation
 
+### Option A: Install via `pip` (Recommended)
+
+```
+pip install xls-r-sqa
+```
+
+### Option B: Install From Source
+
 First, clone the repository.
 
 ```
@@ -285,20 +293,46 @@ cd xls-r-analysis-sqa/
 pip3 install -r requirements.txt
 ```
 
-Finally, this code uses truncated XLS-R models. These can be obtained by downloading
-them from our HuggingFace repositories (recommended, follow
-[[these instructions]](/xls_r_sqa/models/xls-r-trunc/README.md)) or by downloading the full
-pre-trained models (follow [[these instructions]](/xls_r_sqa/models/xls-r/README.md)) and running
-the script [`truncate_w2v2.py`](/truncate_w2v2.py).
+## 3. Truncated XLS-R Models
 
-**Warning:** the size of the truncated XLS-R models sums to 15GB (times 2 since the
-.git directory is also a similar size).
+This code uses truncated XLS-R models. By **default**, the code will attempt to **auto-download**
+the required truncated XLS-R model from Hugging Face whenever you create an E2EModel that uses
+XLS-R. For example:
 
-## 3. Usage
+```python
+from xls_r_sqa.config import XLSR_2B_TRANSFORMER_32DEEP_CONFIG
+from xls_r_sqa.e2e_model import E2EModel
+
+model = E2EModel(
+    config=XLSR_2B_TRANSFORMER_32DEEP_CONFIG,
+    xlsr_layers=10,
+    auto_download=True  # <-- default is True
+)
+```
+
+If you **do not** wish to auto-download, or if you would like to choose your own save location,
+there are two manual approaches:
+
+1. **Download Truncated Models:**
+   Clone the truncated XLS-R repositories from Hugging Face (using Git LFS).
+   Follow [[these instructions]](/xls_r_sqa/models/xls-r-trunc/README.md) in
+   xls_r_sqa/models/xls-r-trunc/README.md.
+
+2. **Truncate Full XLS-R Yourself:**
+   Download the full pre-trained XLS-R models (see [[these instructions]](/xls_r_sqa/models/xls-r/README.md)
+   in xls_r_sqa/models/xls-r/README.md) and then run [`truncate_w2v2.py`](/truncate_w2v2.py) to create the
+   truncated versions locally.
+
+> **Warning**: The combined size of all truncated XLS-R repos is approximately 15 GB (plus
+> `.git` overhead, effectively doubling the storage needed). Make sure you have sufficient
+> disk space *before* downloading or truncating them yourself.
+
+
+## 4. Usage
 
 A working example is provided in [test_e2e_sqa.py](/test_e2e_sqa.py).
 
-## 4. Citation
+## 5. Citation
 
 ```bibtex
 @INPROCEEDINGS{10248049,
